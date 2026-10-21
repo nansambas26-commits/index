@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Shamirah Electronics Company</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#222;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+button,input,select{font-family:inherit;}
+
+.topbar{background:#071a35;color:#fff;padding:9px 6%;display:flex;justify-content:space-between;align-items:center;font-size:14px;}
+.topbar span{margin-right:18px;}
+
+header{background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 3px 15px rgba(0,0,0,.1);}
+.navbar{width:90%;max-width:1250px;min-height:75px;margin:auto;display:flex;align-items:center;justify-content:space-between;position:relative;}
+
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-icon{width:48px;height:48px;border-radius:50%;background:#d4a017;color:#071a35;display:flex;justify-content:center;align-items:center;font-weight:bold;font-size:19px;}
+.logo-text h2{color:#071a35;font-size:20px;}
+.logo-text p{color:#d4a017;font-size:10px;font-weight:bold;letter-spacing:1px;}
+
+.nav-links{display:flex;align-items:center;gap:5px;list-style:none;}
+.nav-links a{color:#17233a;font-weight:bold;font-size:14px;padding:9px 10px;border-radius:5px;transition:.3s;display:inline-block;}
+.nav-links a:hover,.nav-links a.active{background:#071a35;color:#fff;}
+.cart-button{background:#d4a017 !important;color:#071a35 !important;position:relative;}
+.cart-count{position:absolute;top:-8px;right:-5px;background:#e53935;color:#fff;width:21px;height:21px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:11px;}
+
+.menu-btn{display:none;background:#071a35;color:#fff;border:none;padding:8px 12px;border-radius:5px;font-size:23px;cursor:pointer;}
+
+.hero{min-height:430px;background:linear-gradient(rgba(3,17,38,.80),rgba(3,17,38,.80)),url("call.png") center/cover;display:flex;justify-content:center;align-items:center;text-align:center;color:#fff;padding:50px 20px;}
+.hero-content{max-width:850px;animation:fadeUp 1s ease;}
+.hero h1{font-size:52px;margin-bottom:15px;}
+.hero h1 span{color:#d4a017;}
+.hero p{font-size:18px;max-width:700px;margin:auto auto 25px;}
+.hero-buttons{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;}
+
+.btn{border:none;padding:13px 23px;border-radius:6px;font-weight:bold;cursor:pointer;transition:.3s;display:inline-block;}
+.btn-gold{background:#d4a017;color:#071a35;}
+.btn-gold:hover{background:#e7bb35;transform:translateY(-3px);}
+.btn-dark{background:#071a35;color:#fff;}
+.btn-dark:hover{background:#102e56;}
+.btn-outline{border:2px solid #fff;color:#fff;}
+
+section{padding:70px 6%;}
+.section-title{text-align:center;margin-bottom:45px;}
+.section-title h2{color:#071a35;font-size:34px;margin-bottom:10px;}
+.section-title p{color:#666;max-width:700px;margin:auto;}
+
+.feature-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
+.feature-card{background:#fff;border-radius:12px;padding:30px;text-align:center;box-shadow:0 5px 20px rgba(0,0,0,.07);border-top:5px solid #d4a017;transition:.3s;}
+.feature-card:hover{transform:translateY(-6px);}
+.feature-icon{font-size:42px;margin-bottom:12px;}
+.feature-card h3{color:#071a35;margin-bottom:10px;}
+.feature-card p{color:#666;font-size:14px;margin-bottom:20px;}
+
+.cta{max-width:1200px;margin:auto;background:linear-gradient(90deg,rgba(7,26,53,.95),rgba(7,26,53,.65)),url("call.png") center/cover;border-radius:15px;padding:60px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:30px;}
+.cta h2{color:#d4a017;font-size:34px;margin-bottom:10px;}
+.cta p{max-width:650px;color:#e2e6ed;}
+
+footer{background:#041126;color:#fff;padding:55px 6% 20px;}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1.5fr;gap:35px;}
+.footer-col h3{color:#d4a017;margin-bottom:18px;}
+.footer-col p{color:#b9c3d2;font-size:14px;margin-bottom:9px;}
+.footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid #26344c;text-align:center;color:#8d99aa;font-size:13px;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:1050px){
+    .nav-links{position:absolute;top:75px;left:0;width:100%;background:#fff;display:none;flex-direction:column;padding:20px;box-shadow:0 10px 20px rgba(0,0,0,.1);}
+    .nav-links.show{display:flex;}
+    .nav-links a{width:100%;text-align:center;}
+    .menu-btn{display:block;}
+    .feature-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:700px){
+    .topbar{flex-direction:column;gap:5px;text-align:center;}
+    .hero h1{font-size:38px;}
+    .hero p{font-size:15px;}
+    section{padding:50px 5%;}
+    .section-title h2{font-size:28px;}
+    .feature-grid{grid-template-columns:1fr;}
+    .cta{padding:40px 25px;flex-direction:column;text-align:center;}
+    .cta h2{font-size:28px;}
+    .footer-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+    <div><span>📍 Kyotera, Uganda</span><span>📞 +256 708111425</span></div>
+    <div><span>✉️ info@shamirah.com</span><span>Mon - Sat</span></div>
+</div>
+
+<header>
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <div class="logo-icon">SEC</div>
+        <div class="logo-text"><h2>SHAMIRAH</h2><p>ELECTRONICS COMPANY</p></div>
+    </a>
+    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ &amp; Support</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html" class="cart-button">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+    </ul>
+</nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to <span>Shamirah Electronics</span></h1>
+        <p>Smart Technology. Simple Life. Discover quality electronics, professional services and technology solutions for home, business and education.</p>
+        <div class="hero-buttons">
+            <a href="products.html" class="btn btn-gold">Shop Products</a>
+            <a href="offers.html" class="btn btn-outline">View Offers</a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-title"><h2>Why Choose Us</h2><p>Trusted electronics products and services delivered with care and professionalism.</p></div>
+    <div class="feature-grid">
+        <div class="feature-card"><div class="feature-icon">🛒</div><h3>Quality Products</h3><p>A selection of reliable electronics suited for everyday use, business and entertainment.</p><a href="products.html" class="btn btn-gold">Browse Products</a></div>
+        <div class="feature-card"><div class="feature-icon">🛠️</div><h3>Professional Services</h3><p>Installation, maintenance and support services delivered by a knowledgeable team.</p><a href="services.html" class="btn btn-gold">Our Services</a></div>
+        <div class="feature-card"><div class="feature-icon">🎁</div><h3>Special Offers</h3><p>Regular discounts and technology packages available while stocks last.</p><a href="offers.html" class="btn btn-gold">View Offers</a></div>
+    </div>
+</section>
+
+<section>
+    <div class="cta">
+        <div><h2>Upgrade Your Technology</h2><p>Explore our products and services and find technology that matches your home, education or business requirements.</p></div>
+        <a href="products.html" class="btn btn-gold">Browse Products</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col"><h3>Shamirah Electronics</h3><p>Smart Technology. Simple Life.</p><p>Professional electronics products, services and technology solutions.</p></div>
+        <div class="footer-col"><h3>Contact Us</h3><p>📍 Kyotera, Uganda</p><p>📞 +256 708111425</p><p>✉️ info@shamirah.com</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 Shamirah Electronics Company. All Rights Reserved.</div>
+</footer>
+
+<script>
+function toggleMenu(){
+    const nav=document.getElementById("navLinks");
+    const btn=document.getElementById("menuBtn");
+    const isOpen=nav.classList.toggle("show");
+    btn.setAttribute("aria-expanded",isOpen?"true":"false");
+}
+function updateCartCount(){
+    const cart=JSON.parse(localStorage.getItem("shamirahCart")||"[]");
+    const total=cart.reduce(function(sum,item){return sum+(item.quantity||1);},0);
+    document.getElementById("cartCount").textContent=total;
+}
+updateCartCount();
+window.addEventListener("pageshow",updateCartCount);
+document.querySelectorAll(".nav-links a").forEach(function(link){
+    link.addEventListener("click",function(){
+        document.getElementById("navLinks").classList.remove("show");
+        document.getElementById("menuBtn").setAttribute("aria-expanded","false");
+    });
+});
+</script>
+
+</body>
+</html>
